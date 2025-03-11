@@ -2,6 +2,7 @@
 Description=pystats
 
 [Service]
+Restart=always
 ExecStart=/usr/local/bin/pystats.py
 
 [Install]
