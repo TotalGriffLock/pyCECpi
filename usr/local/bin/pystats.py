@@ -67,9 +67,6 @@ j.add_match(_SYSTEMD_UNIT='pycec.service')
 j.get_previous()
 
 while True:
-    # Draw a black filled box to clear the image.
-    draw.rectangle((0, 0, width, height), outline=0, fill=0)
-
     # See if we have a new journal message to display
     event = j.wait(1)
     if event == journal.APPEND:
@@ -77,9 +74,15 @@ while True:
       for entry in j:
         if not "poll" in entry['MESSAGE']:
           draw.rectangle((0, 0, width, height), outline=0, fill=0)
+          # First split off the timestamp, this will be the 1st line to display
           split1 = entry['MESSAGE'].split(',',1)
+          # Then split the message up by dashes - pyCEC outputs logs using a dash delimiter
           split2 = split1[1].split('- ',2)
+          # Now wordwrap it so that it fits nicely on the screen
           wraptext = textwrap.fill(split2[2],20).split('\n', 3)
+          # Draw the text on the oled screen
+          # If it's longer than 3 lines it will get truncated
+          # Check the lines exist before trying to display them
           draw.text((x, top + 0), split1[0], font=font, fill=255)
           draw.text((x, top + 8), wraptext[0], font=font, fill=255)
           if len(wraptext) > 1:
@@ -102,13 +105,12 @@ while True:
       cmd = 'df -h | awk \'$NF=="/"{printf "Disk: %d/%d GB  %s", $3,$2,$5}\''
       Disk = subprocess.check_output(cmd, shell=True).decode("utf-8")
 
-      # Write four lines of text.
-
+      # Blank the screen and write four lines of text.
+      draw.rectangle((0, 0, width, height), outline=0, fill=0)
       draw.text((x, top + 0), "IP: " + IP, font=font, fill=255)
       draw.text((x, top + 8), "CPU load: " + CPU, font=font, fill=255)
       draw.text((x, top + 16), MemUsage, font=font, fill=255)
       draw.text((x, top + 24), Disk, font=font, fill=255)
-      draw.text((x, top + 32), "Hello", font=font, fill=255)
 
       # Display image.
       disp.image(image)
