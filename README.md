@@ -38,4 +38,5 @@ copy pycec.service from this repo into /etc/systemd/service - edit it if you wan
 copy pystats.service from this repo into /etc/systemd/service  
 systemctl enable pycec.service  
 systemctl enable pystats.service  
+Probably do some iptables to make sure only appropriate hosts can communicate with your pyCEC instance  
 reboot!  
