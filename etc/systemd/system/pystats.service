@@ -1,0 +1,8 @@
+[Unit]
+Description=pystats
+
+[Service]
+ExecStart=/usr/local/bin/pystats.py
+
+[Install]
+WantedBy=multi-user.target
