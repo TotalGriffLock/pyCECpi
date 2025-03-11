@@ -8,8 +8,7 @@ There are some commercially available HDMI-CEC to IP interfaces for things like 
 Raspberry Pi Zero W (or Zero 2 W) - without presoldered headers  
 SD card for Raspberry Pi OS  
 Adafruit PiOLED  
-2x6 2.5mm pin headers  
-1 x M2.5 11mm standoff  
+2x6 2.5mm pin header  
 3 x M2.5 18mm screws  
 1 x M2.5 10mm screw  
 4 x M2.5 threaded inserts  
