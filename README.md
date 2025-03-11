@@ -27,6 +27,7 @@ my updated pycec.service systemd service file from this repo
 pystats.py and pystats.service from this repo  
 
 # Steps
+Assembly is a little fiddly but it makes for what I think is a very slick form factor  
 Print the .stl files from this repo (in the STL folder)  
 Solder the 3x2 pin header to pins 1-6 on the Pi  
 Use your soldering iron to fit 3 threaded inserts into the case  
