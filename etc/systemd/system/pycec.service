@@ -2,6 +2,7 @@
 Description=pycec
 
 [Service]
+Restart=always
 ExecStartPre=/usr/bin/tvservice --off
 ExecStart=/usr/local/bin/pycec
 
