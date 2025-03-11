@@ -10,10 +10,10 @@ SD card for Raspberry Pi OS
 Adafruit PiOLED  
 2x6 2.5mm pin header  
 3 x M2.5 18mm screws  
-1 x M2.5 10mm screw  
-4 x M2.5 threaded inserts  
+3 x M2.5 threaded inserts  
 1 x Mini-HDMI solderable breakout connector like https://www.aliexpress.com/item/1005006271343149.html  
 1 x HDMI to HDMI (preferably female to female, no pin header) breakout board such as this https://www.aliexpress.com/item/1005006160781514.html  
+Some short lengths of wire, 26AWG is probably fine  
 
 # Tools required
 3d Printer  
