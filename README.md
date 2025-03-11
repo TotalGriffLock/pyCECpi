@@ -28,6 +28,7 @@ pystats.py and pystats.service from this repo
 
 # Steps
 Print the .stl files from this repo (in the STL folder)  
+Solder the 3x2 pin header to pins 1-6 on the Pi
 Use the Raspberry pi imager to get your OS onto the SD card with your wifi details set, and boot up the pi  
 Update your OS!  
 install pyCEC as per the instructions in konikvranik's repo  
