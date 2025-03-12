@@ -2,7 +2,7 @@
 Building a raspberry pi into a robust HDMI-CEC IP interface
 
 # What?
-There are some commercially available HDMI-CEC to IP interfaces for things like Control4, Crestron, etc. They cost hundreds of pounds/dollars. In the same universe, Home Assistant and Raspberry Pis exist. Surely, the expensive commercial offerings are not the only choice? Also, my TV has limited HDMI ports - I don't want to lose a whole HDMI input just to add this feature, it needs to pass HDMI through
+There are some commercially available HDMI-CEC to IP interfaces for things like Control4, Crestron, etc. They cost hundreds of pounds/dollars. In the same universe, Home Assistant and Raspberry Pis exist. Surely, the expensive commercial offerings are not the only choice? Can I build a small box to go on the back of the TV to provide this kind of functionality? Also, my TV has limited HDMI ports - I don't want to lose a whole HDMI input just to add this feature, it needs to pass HDMI through
 
 # Shopping list - Prices are UK £ sterling at the time of writing
 Raspberry Pi Zero W (or Zero 2 W) - without presoldered headers £14.40 from thepihut + £3.90 shipping  
