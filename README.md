@@ -2,7 +2,7 @@
 Building a raspberry pi into a robust HDMI-CEC IP interface
 
 # What?
-There are some commercially available HDMI-CEC to IP interfaces for things like Control4, Crestron, etc. They cost hundreds of pounds/dollars. In the same universe, Home Assistant and Raspberry Pis exist. Surely, the expensive commercial offerings are not the only choice?
+There are some commercially available HDMI-CEC to IP interfaces for things like Control4, Crestron, etc. They cost hundreds of pounds/dollars. In the same universe, Home Assistant and Raspberry Pis exist. Surely, the expensive commercial offerings are not the only choice? Also, my TV has limited HDMI ports - I don't want to lose a whole HDMI input just to add this feature, it needs to pass HDMI through
 
 # Shopping list - Prices are UK £ sterling at the time of writing
 Raspberry Pi Zero W (or Zero 2 W) - without presoldered headers £14.40 from thepihut  
@@ -14,8 +14,9 @@ Adafruit PiOLED £14.10 from thepihut
 1 x Mini-HDMI solderable breakout connector like https://www.aliexpress.com/item/1005006271343149.html - £4.16 for 5 delivered from aliexpress, so £0.84 each  
 1 x HDMI to HDMI (preferably female to female, no pin header) breakout board such as this https://www.aliexpress.com/item/1005006160781514.html - £5.71 delivered from aliexpress  
 Some short lengths of wire, 26AWG is probably fine  
+According to Cura, 30g of PLA - 1kg of PLA from the Creality store at the moment is £15 delivered so the PLA is roughly £0.45  
   
-TOTAL SO FAR £46.15  
+TOTAL SO FAR £46.60  
 
 # Tools required
 3d Printer  
