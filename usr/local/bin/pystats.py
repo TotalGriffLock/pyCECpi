@@ -97,7 +97,7 @@ while True:
           disp.image(image)
           disp.show()
           time.sleep(0.3)
-    else if page == 2:
+    elif page == 2:
       cmd = "iwgetid -r"
       ssid = subprocess.check_output(cmd, shell=True).decode("utf-8")
       cmd = "hostname -I | cut -d' ' -f1"
