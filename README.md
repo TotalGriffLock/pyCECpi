@@ -1,5 +1,5 @@
-# rpi-cec-unit
-Building a raspberry pi into a robust HDMI-CEC IP interface to make a non-IoT TV into a controllable TV
+# pyCECpi - pyCEC on a pi
+Building a Raspberry Pi Zero into a robust HDMI-CEC IP interface to make a non-IoT TV into a controllable TV
 
 # What?
 There are some commercially available HDMI-CEC to IP interfaces for things like Control4, Crestron, etc. They cost hundreds of pounds/dollars. In the same universe, Home Assistant and Raspberry Pis exist. Surely, the expensive commercial offerings are not the only choice? Can I build a small box to go on the back of the TV to provide this kind of functionality? Also, my TV has limited HDMI ports - I don't want to lose a whole HDMI input just to add this feature, it needs to pass HDMI through
