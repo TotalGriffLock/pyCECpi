@@ -2,6 +2,7 @@
 # SPDX-FileCopyrightText: 2017 Tony DiCola for Adafruit Industries
 # SPDX-FileCopyrightText: 2017 James DeVito for Adafruit Industries
 # SPDX-License-Identifier: MIT
+# Additions for the pyCECpi project, see https://github.com/TotalGriffLock/pyCECpi
 
 # This example is for use on (Linux) computers that are using CPython with
 # Adafruit Blinka to support CircuitPython libraries. CircuitPython does
@@ -11,6 +12,7 @@ import time
 import subprocess
 import select
 import textwrap
+import re
 from systemd import journal
 from board import SCL, SDA
 import busio
@@ -66,6 +68,9 @@ j.seek_tail()
 j.add_match(_SYSTEMD_UNIT='pycec.service')
 j.get_previous()
 
+# paging, start on page 1
+page = 1
+
 while True:
     # See if we have a new journal message to display
     event = j.wait(1)
@@ -92,12 +97,30 @@ while True:
           disp.image(image)
           disp.show()
           time.sleep(0.3)
+    else if page == 2:
+      cmd = "iwgetid -r"
+      ssid = subprocess.check_output(cmd, shell=True).decode("utf-8")
+      cmd = "hostname -I | cut -d' ' -f1"
+      IP = subprocess.check_output(cmd, shell=True).decode("utf-8")
+      cmd = "journalctl --boot -u pycec | grep Serv | tail -n1"
+      split1 = subprocess.check_output(cmd, shell=True).decode("utf-8").split('- ',2)
+      split2 = re.search("'(.+)', (\d+)", split2)
+        
+      # Blank the screen and write four lines of text.
+      draw.rectangle((0, 0, width, height), outline=0, fill=0)
+      draw.text((x, top + 0), "SSID: " + ssd, font=font, fill=255)
+      draw.text((x, top + 8), "IP: " + IP, font=font, fill=255)
+      draw.text((x, top + 16), "pyCEC is listening on, font=font, fill=255)
+      draw.text((x, top + 24), split2.group(1) + ":" + split2.group(2), font=font, fill=255)
+
+      # Display image.
+      disp.image(image)
+      disp.show()
+      time.sleep(5)
 
     else:
       # Shell scripts for system monitoring from here:
       # https://unix.stackexchange.com/questions/119126/command-to-display-memory-usage-disk-usage-and-cpu-load
-      cmd = "hostname -I | cut -d' ' -f1"
-      IP = subprocess.check_output(cmd, shell=True).decode("utf-8")
       cmd = 'cut -f 1 -d " " /proc/loadavg'
       CPU = subprocess.check_output(cmd, shell=True).decode("utf-8")
       cmd = "free -m | awk 'NR==2{printf \"Mem: %s/%s MB %.2f%%\", $3,$2,$3*100/$2 }'"
@@ -107,12 +130,12 @@ while True:
 
       # Blank the screen and write four lines of text.
       draw.rectangle((0, 0, width, height), outline=0, fill=0)
-      draw.text((x, top + 0), "IP: " + IP, font=font, fill=255)
-      draw.text((x, top + 8), "CPU load: " + CPU, font=font, fill=255)
-      draw.text((x, top + 16), MemUsage, font=font, fill=255)
-      draw.text((x, top + 24), Disk, font=font, fill=255)
+      draw.text((x, top + 0), "CPU load: " + CPU, font=font, fill=255)
+      draw.text((x, top + 8), MemUsage, font=font, fill=255)
+      draw.text((x, top + 16), Disk, font=font, fill=255)
 
       # Display image.
       disp.image(image)
       disp.show()
-      time.sleep(0.1)
+      time.sleep(5)
+      page = 2
