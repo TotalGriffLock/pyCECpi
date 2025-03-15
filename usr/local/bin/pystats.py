@@ -143,12 +143,19 @@ while True:
       MemUsage = subprocess.check_output(cmd, shell=True).decode("utf-8")
       cmd = 'df -h | awk \'$NF=="/"{printf "Disk: %d/%d GB  %s", $3,$2,$5}\''
       Disk = subprocess.check_output(cmd, shell=True).decode("utf-8")
+      for process in psutil.process_iter():
+        cmdline = process.cmdline()
+        if "/usr/local/bin/pycec" in cmdline:
+          journalstr2 = "pyCEC PID: " + str(process.pid)
+      if len(journalstr2) == 0:
+        journalstr2 = "pyCEC is NOT running!"
 
       # Blank the screen and write four lines of text.
       draw.rectangle((0, 0, width, height), outline=0, fill=0)
       draw.text((x, top + 0), "CPU load: " + CPU, font=font, fill=255)
       draw.text((x, top + 8), MemUsage, font=font, fill=255)
       draw.text((x, top + 16), Disk, font=font, fill=255)
+      draw.text((x, top + 24), journalstr2, font=font, fill=255)
 
       # Display image.
       disp.image(image)
