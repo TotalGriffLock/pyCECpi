@@ -6,7 +6,7 @@ There are some commercially available HDMI-CEC to IP interfaces for things like 
 
 # Shopping list - Prices are UK £ sterling at the time of writing
 Raspberry Pi Zero W (or Zero 2 W) - without presoldered headers £14.40 from thepihut + £3.90 shipping  
-SD card for Raspberry Pi OS £6.90 for a Sandisk from Amazon  
+SD card for Raspberry Pi OS £6.90 for a 32GB Sandisk from Amazon, realistically this probably fits on a 4GB if you use Rasbian Pi OS Lite  
 Adafruit PiOLED £14.10 from thepihut  
 2x6 2.5mm pin header - a 40 pin header from the pihut is £1, you can make 6 from that, so £0.17  
 3 x M2.5 20mm screws - £3.79 from eBay - cheaper in bulk  
