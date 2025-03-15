@@ -13,6 +13,7 @@ import subprocess
 import select
 import textwrap
 import re
+import psutil
 from systemd import journal
 from board import SCL, SDA
 import busio
@@ -69,9 +70,12 @@ j.add_match(_SYSTEMD_UNIT='pycec.service')
 j.get_previous()
 
 # paging, start on page 1
-page = 1
+showpage = 1
 
 while True:
+    journalstr1 = ""
+    journalstr2 = ""
+    wraptext = list()
     # See if we have a new journal message to display
     event = j.wait(1)
     if event == journal.APPEND:
@@ -82,9 +86,12 @@ while True:
           # First split off the timestamp, this will be the 1st line to display
           split1 = entry['MESSAGE'].split(',',1)
           # Then split the message up by dashes - pyCEC outputs logs using a dash delimiter
-          split2 = split1[1].split('- ',2)
-          # Now wordwrap it so that it fits nicely on the screen
-          wraptext = textwrap.fill(split2[2],20).split('\n', 3)
+          if len(split1) > 1:
+            split2 = split1[1].split('- ',2)
+            # Now wordwrap it so that it fits nicely on the screen
+            wraptext = textwrap.fill(split2[2],20).split('\n', 3)
+          else:
+            wraptext.append("")
           # Draw the text on the oled screen
           # If it's longer than 3 lines it will get truncated
           # Check the lines exist before trying to display them
@@ -97,15 +104,23 @@ while True:
           disp.image(image)
           disp.show()
           time.sleep(0.3)
-    elif page == 2:
+    elif showpage == 2:
       cmd = "iwgetid -r"
       ssid = subprocess.check_output(cmd, shell=True).decode("utf-8")
       cmd = "hostname -I | cut -d' ' -f1"
       IP = subprocess.check_output(cmd, shell=True).decode("utf-8")
-      cmd = "journalctl --boot -u pycec | grep Serv | tail -n1"
-      split1 = subprocess.check_output(cmd, shell=True).decode("utf-8").split('- ',2)
-      split2 = re.search("'(.+)', (\d+)", split2)
-        
+      for process in psutil.process_iter():
+        cmdline = process.cmdline()
+        if "/usr/local/bin/pycec" in cmdline:
+          cmd = "journalctl --boot -u pycec | grep Serv | tail -n1"
+          journalstr = subprocess.check_output(cmd, shell=True).decode("utf-8")
+          split1 = journalstr.split('- ',2)
+          split2 = re.search("'(.+)', (\d+)", split1[2])
+          journalstr1 = "pyCEC is listening on"
+          journalstr2 = split2.group(1) + ":" + split2.group(2)
+      if len(journalstr1) == 0:
+        journalstr1 = ""
+        journalstr2 = "pyCEC is NOT running!"
       # Blank the screen and write four lines of text.
       draw.rectangle((0, 0, width, height), outline=0, fill=0)
       draw.text((x, top + 0), "SSID: " + ssd, font=font, fill=255)
@@ -117,6 +132,7 @@ while True:
       disp.image(image)
       disp.show()
       time.sleep(5)
+      showpage = 1
 
     else:
       # Shell scripts for system monitoring from here:
@@ -138,4 +154,4 @@ while True:
       disp.image(image)
       disp.show()
       time.sleep(5)
-      page = 2
+      showpage = 2
