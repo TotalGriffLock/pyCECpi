@@ -27,7 +27,7 @@ Screwdriver
 # Software required
 pyCEC from https://github.com/konikvranik/pyCEC  
 my updated pycec.service systemd service file from this repo  
-pystats.py and pystats.service from this repo  
+pystats.py and pystats.service from this repo - pystats.py is based on the Adafruit script provided with the oled screen, available at https://learn.adafruit.com/adafruit-pioled-128x32-mini-oled-for-raspberry-pi/usage  
 
 # Steps
 Assembly is a little fiddly but it makes for what I think is a very slick form factor  
