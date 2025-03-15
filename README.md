@@ -27,7 +27,7 @@ Screwdriver
 # Software required
 pyCEC from https://github.com/konikvranik/pyCEC  
 my updated pycec.service systemd service file from this repo  
-pystats.py and pystats.service from this repo - pystats.py is based on the Adafruit script provided with the oled screen, available at https://learn.adafruit.com/adafruit-pioled-128x32-mini-oled-for-raspberry-pi/usage  
+pystats.py clearoled.py and pystats.service from this repo - pystats.py is based on the Adafruit script provided with the oled screen, available at https://learn.adafruit.com/adafruit-pioled-128x32-mini-oled-for-raspberry-pi/usage  
 
 # Steps
 Assembly is a little fiddly but it makes for what I think is a very slick form factor  
@@ -41,7 +41,8 @@ Update your OS!
 install pyCEC as per the instructions in konikvranik's repo  
 install the systemd python library  
 copy pycec.service from this repo into /etc/systemd/service - edit it if you want to fix the IP that pycec listens on, or change the port  
-copy pystats.service from this repo into /etc/systemd/service  
+copy pystats.service from this repo into /etc/systemd/service 
+copy pystats.py and clearoled.py into /usr/local/bin and make sure they are marked executable  
 systemctl enable pycec.service  
 systemctl enable pystats.service  
 Probably do some iptables to make sure only appropriate hosts can communicate with your pyCEC instance  
