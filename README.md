@@ -39,7 +39,8 @@ Fit the screen in to the case first, fit the HDMI breakout onto the frame, fit t
 Use the Raspberry pi imager to get your OS onto the SD card with your wifi details set, and boot up the pi  
 Update your OS!  
 install pyCEC as per the instructions in konikvranik's repo  
-install the systemd python library  
+install the systemd and psutil python library  
+apt install python3-systemd python3-psutil  
 copy pycec.service from this repo into /etc/systemd/service - edit it if you want to fix the IP that pycec listens on, or change the port  
 copy pystats.service from this repo into /etc/systemd/service 
 copy pystats.py and clearoled.py into /usr/local/bin and make sure they are marked executable  
