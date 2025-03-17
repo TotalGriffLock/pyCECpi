@@ -52,10 +52,16 @@ Update your OS!
 install pyCEC as per the instructions in konikvranik's repo  
 install the systemd and psutil python library  
 apt install python3-systemd python3-psutil  
-copy pycec.service from this repo into /etc/systemd/service - edit it if you want to fix the IP that pycec listens on, or change the port  
+copy pycec.service from this repo into /etc/systemd/service
 copy pystats.service from this repo into /etc/systemd/service 
 copy pystats.py and clearoled.py into /usr/local/bin and make sure they are marked executable  
 systemctl enable pycec.service  
 systemctl enable pystats.service  
 Probably do some iptables to make sure only appropriate hosts can communicate with your pyCEC instance  
+It is not well documented but you can create /etc/pycec.conf with the format:  
+```
+[DEFAULT]
+host=1.2.3.4 # This is the IP of the pi to listen on, in case your pi has multiple network interfaces
+port=9526    # This is the port to listen on
+```
 reboot!  
