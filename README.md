@@ -43,7 +43,7 @@ pystats.py clearoled.py and pystats.service from this repo - pystats.py is based
 # Steps
 Assembly is a little fiddly but it makes for what I think is a very slick form factor  
 Print the .stl files from this repo (in the STL folder)  
-If you would like to edit the design, the Tinkercad URL is https://www.tinkercad.com/things/0NLJmSpSXox-rpi-hdmi-cec-case-v2-public?sharecode=wan5CYfUvVIYxtbasbn6gxQ1efw_0Rr8LfkhCQqNGgM  
+If you would like to edit the design, the Tinkercad URL is [https://www.tinkercad.com/things/0NLJmSpSXox-rpi-hdmi-cec-case-v2-public?sharecode=wan5CYfUvVIYxtbasbn6gxQ1efw_0Rr8LfkhCQqNGgM](https://www.tinkercad.com/things/1sP1Ou0873z-rpi-hdmi-cec-case-v3-public?sharecode=zlmHFi9SsDDJY9WS3CIGC6sMnaif7PkTeC0AQyqL-Io)  
 Solder the 3x2 pin header to pins 1-6 on the Pi  
 Use your soldering iron to melt 3 threaded inserts into the case and 1 into the frame  
 Fit the screen in to the case first, fit the HDMI breakout onto the frame, fit the frame into the case, then fit the pi on top of the frame  
