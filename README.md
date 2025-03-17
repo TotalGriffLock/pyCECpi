@@ -92,7 +92,7 @@ reboot!
 # Final Thoughts
 There are loads of ways this could be smaller, cheaper, and simpler. 
 * You can split HDMI-CEC directly into GPIO on the RPI, but that requires a kernel overlay, which must be maintained to stay in line with the kernel version. This route could get rid of the mini-hdmi breakout
-* You don't need the oled screen, I just really like it. The case could be considerably thinner without it, reducing footprint.
+* You don't need the oled screen, I just really like it. The case could be considerably thinner without it, reducing footprint. The screen is also 30% of the total cost.
 * If I didn't require HDMI pass through, it could just be a bare RPI, and be loads smaller and simpler.
 * I could just buy a new TV that supports IoT (e.g. Samsung's SmartThings), or a TV with more HDMI inputs and save all the hassle.
 * It is tempting to power the pyCECpi directly from the USB port on your TV. Be wary of how long that port supplies power, after the TV has gone into standby.
