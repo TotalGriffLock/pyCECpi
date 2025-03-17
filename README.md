@@ -79,7 +79,7 @@ Probably do some iptables to make sure only appropriate hosts can communicate wi
 sudo apt install iptables-persistent
 sudo iptables -I INPUT 1 -m tcp -p tcp --dport 9526 -m comment --comment "Deny access to pyCEC" -j DROP
 sudo iptables -I INPUT 1 --source <homeassistantip> -m tcp -p tcp --dport 9526 -m comment --comment "Permit HomeAssistant to pyCEC" -j ACCEPT
-sudo iptables-save | tee /etc/iptables/rules-v4 > /dev/null
+sudo iptables-save | sudo tee /etc/iptables/rules.v4 > /dev/null
 ```
 It is not well documented but you can create /etc/pycec.conf with the format:  
 ```
