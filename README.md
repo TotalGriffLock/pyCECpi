@@ -34,7 +34,7 @@ Assembly is a little fiddly but it makes for what I think is a very slick form f
 Print the .stl files from this repo (in the STL folder)  
 If you would like to edit the design, the Tinkercad URL is https://www.tinkercad.com/things/0NLJmSpSXox-rpi-hdmi-cec-case-v2-public?sharecode=wan5CYfUvVIYxtbasbn6gxQ1efw_0Rr8LfkhCQqNGgM  
 Solder the 3x2 pin header to pins 1-6 on the Pi  
-Use your soldering iron to fit 3 threaded inserts into the case  
+Use your soldering iron to melt 3 threaded inserts into the case and 1 into the frame  
 Fit the screen in to the case first, fit the HDMI breakout onto the frame, fit the frame into the case, then fit the pi on top of the frame  
 Use the Raspberry pi imager to get your OS onto the SD card with your wifi details set, and boot up the pi  
 Update your OS!  
