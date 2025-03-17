@@ -26,7 +26,7 @@ Adafruit PiOLED £14.10 from thepihut
 1 x Mini-HDMI solderable breakout connector like https://www.aliexpress.com/item/1005006271343149.html - £4.16 for 5 delivered from aliexpress, so £0.84 each  
 1 x HDMI to HDMI (preferably female to female, no pin header) breakout board such as this https://www.aliexpress.com/item/1005006160781514.html - £5.71 delivered from aliexpress  
 Some short lengths of wire, 26AWG is probably fine  
-According to Cura, 30g of PLA - 1kg of PLA from the Creality store at the moment is £15 delivered so the PLA is roughly £0.45  
+According to Cura, 23g of PLA - 1kg of PLA from the Creality store at the moment is £15 delivered so the PLA is roughly £0.35  
   
 TOTAL SO FAR £50.50  
 
