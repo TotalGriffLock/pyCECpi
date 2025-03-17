@@ -9,7 +9,11 @@ There are some commercially available HDMI-CEC to IP interfaces for things like 
 * HDMI-CEC controllable over IP, for integration into automation services (e.g. Home Assistant)  
 * Small display screen to see status at a glance, for troubleshooting  
 * HDMI passthrough, so the device does not monopolise an HDMI input - my TV only has 3 and I use them all!  
-* Cheaper than existing commercially available options  
+* Cheaper than existing commercially available options
+
+# First prototype
+![image](https://github.com/user-attachments/assets/8f2b946d-722e-4c1b-a191-e1cd384eed29)
+
 
 # Shopping list - Prices are UK £ sterling at the time of writing
 Raspberry Pi Zero W (or Zero 2 W) - without presoldered headers £14.40 from thepihut + £3.90 shipping  
