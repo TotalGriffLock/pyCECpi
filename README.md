@@ -49,15 +49,38 @@ Use your soldering iron to melt 3 threaded inserts into the case and 1 into the 
 Fit the screen in to the case first, fit the HDMI breakout onto the frame, fit the frame into the case, then fit the pi on top of the frame  
 Use the Raspberry pi imager to get your OS onto the SD card with your wifi details set, and boot up the pi  
 Update your OS!  
-install pyCEC as per the instructions in konikvranik's repo  
-install the systemd and psutil python library  
-apt install python3-systemd python3-psutil  
+install pyCEC as per the instructions in [konikvranik's repo ](https://github.com/konikvranik/pyCEC) 
+Install the systemd and psutil python library  
+```
+sudo apt install python3-systemd python3-psutil
+```
 copy pycec.service from this repo into /etc/systemd/service
+```
+sudo curl -JLo /etc/systemd/service/pycec.service https://raw.githubusercontent.com/TotalGriffLock/pyCECpi/refs/heads/main/etc/systemd/system/pycec.service
+```
 copy pystats.service from this repo into /etc/systemd/service 
+```
+sudo curl -JLo /etc/systemd/service/pystats.service https://raw.githubusercontent.com/TotalGriffLock/pyCECpi/refs/heads/main/etc/systemd/system/pystats.service
+```
 copy pystats.py and clearoled.py into /usr/local/bin and make sure they are marked executable  
-systemctl enable pycec.service  
-systemctl enable pystats.service  
-Probably do some iptables to make sure only appropriate hosts can communicate with your pyCEC instance  
+```
+sudo curl -JLo /usr/local/bin/pystats.py https://raw.githubusercontent.com/TotalGriffLock/pyCECpi/refs/heads/main/usr/local/bin/pystats.py
+sudo curl -JLo /usr/local/bin/clearoled.py https://raw.githubusercontent.com/TotalGriffLock/pyCECpi/refs/heads/main/usr/local/bin/clearoled.py
+sudo chmod +x /usr/local/bin/*.py
+```
+Enable the new services
+```
+sudo systemctl daemon-reload
+sudo systemctl enable pycec.service  
+sudo systemctl enable pystats.service
+```
+Probably do some iptables to make sure only appropriate hosts can communicate with your pyCEC instance, something like:  
+```
+sudo apt install iptables-persistent
+sudo iptables -I INPUT 1 -m tcp -p tcp --dport 9526 -m comment --comment "Deny access to pyCEC" -j DROP
+sudo iptables -I INPUT 1 --source <homeassistantip> -m tcp -p tcp --dport 9526 -m comment --comment "Permit HomeAssistant to pyCEC" -j ACCEPT
+sudo iptables-save | tee /etc/iptables/rules-v4 > /dev/null
+```
 It is not well documented but you can create /etc/pycec.conf with the format:  
 ```
 [DEFAULT]
