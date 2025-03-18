@@ -20,8 +20,8 @@ Raspberry Pi Zero W (or Zero 2 W) - without presoldered headers £14.40 from the
 SD card for Raspberry Pi OS £6.90 for a 32GB Sandisk from Amazon, realistically this probably fits on a 4GB if you use Rasbian Pi OS Lite  
 Adafruit PiOLED £14.10 from thepihut  
 2x6 2.5mm pin header - a 40 pin header from the pihut is £1, you can make 6 from that, so £0.17  
-3 x M2.5 20mm screws - £3.79 from eBay - cheaper in bulk  
-1 x M2.5 10mm screw  
+3 x M2.5 16mm screws - £3.79 from eBay - cheaper in bulk  
+1 x M2.5 8mm screw  
 4 x M2.5 threaded inserts - £7.99 for 100 on amazon - £0.24 for 3  
 1 x Mini-HDMI solderable breakout connector like https://www.aliexpress.com/item/1005006271343149.html - £4.16 for 5 delivered from aliexpress, so £0.84 each  
 1 x HDMI to HDMI (preferably female to female, no pin header) breakout board such as this https://www.aliexpress.com/item/1005006160781514.html - £5.71 delivered from aliexpress  
