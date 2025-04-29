@@ -12,7 +12,8 @@ There are some commercially available HDMI-CEC to IP interfaces for things like 
 * Cheaper than existing commercially available options
 
 # First prototype
-![image](https://github.com/user-attachments/assets/8f2b946d-722e-4c1b-a191-e1cd384eed29)
+![image](https://github.com/user-attachments/assets/cdbfc126-876a-4b8a-8f6b-64c8724e9e3b)
+
 
 
 # Shopping list - Prices are UK £ sterling at the time of writing
