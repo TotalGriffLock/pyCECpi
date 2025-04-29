@@ -11,7 +11,7 @@ There are some commercially available HDMI-CEC to IP interfaces for things like 
 * HDMI passthrough, so the device does not monopolise an HDMI input - my TV only has 3 and I use them all!  
 * Cheaper than existing commercially available options
 
-# First prototype
+# First prototype - green board
 ![image](https://github.com/user-attachments/assets/cdbfc126-876a-4b8a-8f6b-64c8724e9e3b)
 
 
